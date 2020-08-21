@@ -4,6 +4,7 @@
 
 0. Clone repository to your server
 0. Change auth tokens in `/src/utils/secret.key.js`
+0. Change emails in `/src/routes/index.js`
 0. Run `npm run start`
 0. Make rest request to url `IP_YOUR_SERVER:1000/send_mail` and body like `application/json`
 0. Enjoy!
