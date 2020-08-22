@@ -1,7 +1,7 @@
 var secret_keys = require('./secret.key');
 
 module.exports = async (ctx, next) => {
-    if (secret_keys.find(secret_key => secret_key === ctx.header.auth_token)) {
+    if (secret_keys.find(secret_key => secret_key === ctx.header['AUTH-TOKEN'])) {
         ctx.isAuth = true;
     } else {
         ctx.isAuth = false;
