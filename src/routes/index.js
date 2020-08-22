@@ -31,7 +31,7 @@ module.exports = async (ctx, next) => {
             subject: "API used - /send_mail",
             html: `<pre>
                         <p><b>result:</b> ${JSON.stringify(result)}</p>
-                        <p><b>AUTH-TOKEN:</b> ${ctx.header['AUTH-TOKEN']}</p>
+                        <p><b>AUTH-TOKEN:</b> ${ctx.header['auth-token']}</p>
                    </pre>`
         });
 

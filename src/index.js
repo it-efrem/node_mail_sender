@@ -14,7 +14,7 @@ const router = new Router();
 router.post('/send_mail', koaBody(), mail_sender);
 
 app.use(cors({
-    allowHeaders : 'content-type, AUTH-TOKEN',
+    allowHeaders : 'content-type, auth-token',
     exposeHeaders: 'Content-Disposition',
     credentials: true,
 }));
