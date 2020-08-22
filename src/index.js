@@ -4,19 +4,20 @@ var Router = require('koa-router');
 var koaBody = require('koa-body');
 var Koa = require('koa');
 var app = module.exports = new Koa();
+const cors = require('@koa/cors');
 
 var mail_sender = require('./routes');
 var auth_check = require('./utils/auth');
 var port = 1000;
 
-app.use(logger());
-
 const router = new Router();
 router.post('/send_mail', koaBody(), mail_sender);
 
+app.use(cors());
 app.use(auth_check);
 app.use(router.routes());
 app.use(router.allowedMethods());
+app.use(logger());
 
 if (!module.parent) {
     app.listen(port);

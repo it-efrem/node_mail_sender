@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/it-efrem/node_mail_sender#readme",
   "dependencies": {
+    "@koa/cors": "^3.1.0",
     "koa": "^2.13.0",
     "koa-body": "^4.2.0",
     "koa-logger": "^3.2.1",
