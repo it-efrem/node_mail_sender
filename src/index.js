@@ -13,7 +13,11 @@ var port = 1000;
 const router = new Router();
 router.post('/send_mail', koaBody(), mail_sender);
 
-app.use(cors());
+app.use(cors({
+    allowHeaders : 'content-type, auth_token',
+    exposeHeaders: 'Content-Disposition',
+    credentials: true,
+}));
 app.use(auth_check);
 app.use(router.routes());
 app.use(router.allowedMethods());
